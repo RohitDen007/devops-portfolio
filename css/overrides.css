@@ -1,0 +1,74 @@
+/* ============================================
+   FINAL OVERRIDES - White Backgrounds & Coral Colors
+   ============================================ */
+
+/* Force White Backgrounds */
+.project-card {
+    background: white !important;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.12) !important;
+    border: 1px solid rgba(255, 107, 107, 0.2) !important;
+}
+
+.skills-group {
+    background: white !important;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.12) !important;
+    border: 1px solid rgba(255, 193, 7, 0.2) !important;
+}
+
+.timeline-content {
+    background: white !important;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.12) !important;
+    border: 1px solid rgba(78, 205, 196, 0.2) !important;
+}
+
+.achievements {
+    background: white !important;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.12) !important;
+    border: 1px solid rgba(255, 107, 107, 0.2) !important;
+}
+
+.projects-cta {
+    background: white !important;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.12) !important;
+    border: 1px solid rgba(255, 107, 107, 0.2) !important;
+}
+
+.floating-card {
+    background: white !important;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.12) !important;
+    border: 1px solid rgba(255, 107, 107, 0.2) !important;
+}
+
+/* Force Coral Color Scheme */
+:root {
+    --accent-color: #ff6b6b !important;
+    --accent-dark: #ff5252 !important;
+    --accent-light: #4ecdc4 !important;
+}
+
+/* Hover Effects */
+.project-card:hover {
+    border-color: #ff6b6b !important;
+    box-shadow: 0 20px 40px rgba(255, 107, 107, 0.2) !important;
+}
+
+.skills-group:hover {
+    border-color: #ffc107 !important;
+    box-shadow: 0 20px 40px rgba(255, 193, 7, 0.2) !important;
+}
+
+.timeline-item:hover .timeline-content {
+    border-color: #4ecdc4 !important;
+    box-shadow: 0 20px 40px rgba(78, 205, 196, 0.2) !important;
+}
+
+/* Dark Mode Overrides */
+body.dark-mode .project-card,
+body.dark-mode .skills-group,
+body.dark-mode .timeline-content,
+body.dark-mode .achievements,
+body.dark-mode .projects-cta,
+body.dark-mode .floating-card {
+    background: rgba(30, 30, 30, 0.95) !important;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.4) !important;
+}
