@@ -1,0 +1,84 @@
+{
+  "projects": [
+    {
+      "id": 1,
+      "title": "Scalable Three-Tier Web Architecture",
+      "description": "Architected and deployed a highly available three-tier application on AWS with Nginx reverse proxy, Node.js backend, and MySQL database. Achieved 99.9% uptime with containerized services and optimized load balancing.",
+      "image": "⚙️",
+      "category": "fullstack",
+      "technologies": ["AWS", "Docker", "Nginx", "Node.js", "MySQL", "Load Balancing"],
+      "github": "https://github.com",
+      "live": "https://example.com",
+      "featured": true,
+      "metrics": [
+        "99.9% uptime",
+        "25% latency reduction",
+        "40% deployment issues decreased"
+      ]
+    },
+    {
+      "id": 2,
+      "title": "Containerized Flask Microservice",
+      "description": "Designed and containerized a RESTful Flask microservice for consistent deployments across Linux environments. Reduced setup time from 30 minutes to under 5 minutes with Docker containerization.",
+      "image": "🐳",
+      "category": "fullstack",
+      "technologies": ["Python", "Flask", "Docker", "REST API", "Microservices"],
+      "github": "https://github.com",
+      "live": "https://example.com",
+      "featured": true,
+      "metrics": [
+        "Setup time: 30min → 5min",
+        "Improved portability",
+        "Rapid horizontal scaling"
+      ]
+    },
+    {
+      "id": 3,
+      "title": "Cloud-Based Object Storage Solution",
+      "description": "Built a secure, scalable object storage solution using AWS S3 with IAM role-based access control. Integrated Boto3 SDK for automated file operations with 11 nines durability guarantee.",
+      "image": "☁️",
+      "category": "fullstack",
+      "technologies": ["AWS S3", "IAM", "Boto3", "Python", "Security"],
+      "github": "https://github.com",
+      "live": "https://example.com",
+      "featured": true,
+      "metrics": [
+        "11 nines durability",
+        "100% unauthorized access prevention",
+        "60% manual work reduction"
+      ]
+    },
+    {
+      "id": 4,
+      "title": "Automated System Monitoring & Logging Framework",
+      "description": "Developed automated Bash scripts for system health monitoring, log rotation, and performance collection on Linux servers. Implemented cron jobs for proactive monitoring reducing incident detection time by 35%.",
+      "image": "📊",
+      "category": "fullstack",
+      "technologies": ["Linux", "Bash", "Cron", "Monitoring", "Logging", "Performance"],
+      "github": "https://github.com",
+      "live": "https://example.com",
+      "featured": true,
+      "metrics": [
+        "35% faster incident detection",
+        "70% manual monitoring reduced",
+        "Prevents disk overflow"
+      ]
+    },
+    {
+      "id": 5,
+      "title": "CI/CD Pipeline with Automated Deployment",
+      "description": "Designed and implemented a Jenkins-based CI/CD pipeline automating build, test, and deployment stages for Node.js applications. Reduced deployment time from 15 minutes to under 2 minutes with continuous delivery to AWS EC2.",
+      "image": "🚀",
+      "category": "fullstack",
+      "technologies": ["Jenkins", "AWS EC2", "Node.js", "Git", "Automated Testing", "Pipeline"],
+      "github": "https://github.com",
+      "live": "https://example.com",
+      "featured": true,
+      "metrics": [
+        "Deployment: 15min → 2min",
+        "Release frequency: 3x increase",
+        "50% deployment errors reduced"
+      ]
+    }
+  ]
+}

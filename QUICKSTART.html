@@ -1,0 +1,353 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio Quick Start Guide</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            padding: 2rem;
+        }
+        
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 12px;
+            padding: 3rem;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+        }
+        
+        h1 {
+            color: #667eea;
+            margin-bottom: 1rem;
+            font-size: 2.5rem;
+        }
+        
+        h2 {
+            color: #667eea;
+            margin-top: 2rem;
+            margin-bottom: 1rem;
+            font-size: 1.5rem;
+        }
+        
+        p {
+            margin-bottom: 1rem;
+            color: #555;
+        }
+        
+        code {
+            background: #f5f5f5;
+            padding: 0.2rem 0.4rem;
+            border-radius: 4px;
+            font-family: 'Courier New', monospace;
+            color: #d63384;
+        }
+        
+        pre {
+            background: #2d2d2d;
+            color: #f8f8f2;
+            padding: 1rem;
+            border-radius: 8px;
+            overflow-x: auto;
+            margin: 1rem 0;
+            font-family: 'Courier New', monospace;
+            font-size: 0.9rem;
+        }
+        
+        .section {
+            margin: 2rem 0;
+        }
+        
+        .steps {
+            background: #f8f9fa;
+            padding: 1.5rem;
+            border-radius: 8px;
+            border-left: 4px solid #667eea;
+        }
+        
+        .step {
+            margin: 1rem 0;
+            padding: 0.5rem 0;
+        }
+        
+        .step-number {
+            display: inline-block;
+            width: 28px;
+            height: 28px;
+            background: #667eea;
+            color: white;
+            border-radius: 50%;
+            text-align: center;
+            line-height: 28px;
+            font-weight: bold;
+            margin-right: 0.5rem;
+        }
+        
+        .cta {
+            margin-top: 2rem;
+            display: flex;
+            gap: 1rem;
+        }
+        
+        .btn {
+            padding: 0.75rem 1.5rem;
+            border-radius: 8px;
+            border: none;
+            font-weight: 600;
+            cursor: pointer;
+            text-decoration: none;
+            display: inline-block;
+            transition: all 0.3s ease;
+        }
+        
+        .btn-primary {
+            background: #667eea;
+            color: white;
+        }
+        
+        .btn-primary:hover {
+            background: #5568d3;
+            transform: translateY(-2px);
+        }
+        
+        .btn-secondary {
+            background: white;
+            color: #667eea;
+            border: 2px solid #667eea;
+        }
+        
+        .btn-secondary:hover {
+            background: #f8f9fa;
+        }
+        
+        .feature-list {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1rem;
+            margin: 1rem 0;
+        }
+        
+        .feature-item {
+            padding: 1rem;
+            background: #f8f9fa;
+            border-radius: 8px;
+            border-left: 3px solid #667eea;
+        }
+        
+        .feature-item strong {
+            color: #667eea;
+        }
+        
+        @media (max-width: 600px) {
+            .container {
+                padding: 1.5rem;
+            }
+            
+            h1 {
+                font-size: 1.8rem;
+            }
+            
+            .feature-list {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>🚀 Portfolio Quick Start Guide</h1>
+        
+        <p style="font-size: 1.1rem; color: #667eea; font-weight: 500;">
+            Welcome to your modern portfolio website! This guide will help you get started.
+        </p>
+        
+        <!-- Getting Started Section -->
+        <div class="section">
+            <h2>📋 What's Included</h2>
+            <div class="feature-list">
+                <div class="feature-item">
+                    <strong>✨ Modern Design</strong>
+                    <p style="margin-top: 0.5rem;">Minimalist, professional layout with 2025 trends</p>
+                </div>
+                <div class="feature-item">
+                    <strong>🌙 Dark Mode</strong>
+                    <p style="margin-top: 0.5rem;">Toggle between light and dark themes</p>
+                </div>
+                <div class="feature-item">
+                    <strong>📱 Responsive</strong>
+                    <p style="margin-top: 0.5rem;">Perfect on mobile, tablet, and desktop</p>
+                </div>
+                <div class="feature-item">
+                    <strong>🎨 Smooth Animations</strong>
+                    <p style="margin-top: 0.5rem;">Delightful micro-interactions and transitions</p>
+                </div>
+                <div class="feature-item">
+                    <strong>🚀 Dynamic Projects</strong>
+                    <p style="margin-top: 0.5rem;">Auto-load and filter your projects</p>
+                </div>
+                <div class="feature-item">
+                    <strong>♿ Accessible</strong>
+                    <p style="margin-top: 0.5rem;">ARIA labels, keyboard navigation, semantic HTML</p>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Quick Start Section -->
+        <div class="section">
+            <h2>⚡ Quick Start (1 minute)</h2>
+            <div class="steps">
+                <div class="step">
+                    <span class="step-number">1</span>
+                    Double-click <code>index.html</code> to open in your browser
+                </div>
+                <div class="step">
+                    <span class="step-number">2</span>
+                    Click the moon/sun icon to toggle dark mode
+                </div>
+                <div class="step">
+                    <span class="step-number">3</span>
+                    Scroll to explore all sections
+                </div>
+            </div>
+        </div>
+        
+        <!-- Customization Section -->
+        <div class="section">
+            <h2>🎨 Customize Your Portfolio</h2>
+            
+            <h3 style="color: #764ba2; font-size: 1.1rem; margin-top: 1.5rem;">Step 1: Update Your Information</h3>
+            <p>Edit <code>index.html</code> and replace:</p>
+            <ul style="margin-left: 1.5rem; margin-bottom: 1rem;">
+                <li>"Rohit Shrivastava" → Your name</li>
+                <li>"Full Stack Developer & UI/UX Enthusiast" → Your title</li>
+                <li>Contact info, email, phone, social links</li>
+                <li>About section content</li>
+            </ul>
+            
+            <h3 style="color: #764ba2; font-size: 1.1rem; margin-top: 1.5rem;">Step 2: Add Your Projects</h3>
+            <p>Edit <code>data/projects.json</code>:</p>
+            <pre>{
+  "projects": [
+    {
+      "id": 1,
+      "title": "Your Project Name",
+      "description": "What does your project do?",
+      "image": "🚀",
+      "category": "frontend",
+      "technologies": ["React", "CSS"],
+      "github": "https://github.com/you/project",
+      "live": "https://your-project.com"
+    }
+  ]
+}</pre>
+            
+            <h3 style="color: #764ba2; font-size: 1.1rem; margin-top: 1.5rem;">Step 3: Change Colors (Optional)</h3>
+            <p>Edit <code>css/variables.css</code> to change the accent color:</p>
+            <pre>--accent-color: #6366f1;  /* Change this to your color */</pre>
+        </div>
+        
+        <!-- Advanced Section -->
+        <div class="section">
+            <h2>🔧 Advanced Setup</h2>
+            
+            <h3 style="color: #764ba2; font-size: 1.1rem; margin-top: 1rem;">Using Python Project Discovery</h3>
+            <p>Automatically scan your workspace for projects:</p>
+            <pre>python discover-projects.py</pre>
+            <p>This will scan folders with README.md files and generate <code>discovered-projects.json</code></p>
+            
+            <h3 style="color: #764ba2; font-size: 1.1rem; margin-top: 1rem;">Running a Local Server</h3>
+            <p><strong>Python 3:</strong></p>
+            <pre>python -m http.server 8000</pre>
+            <p><strong>Node.js:</strong></p>
+            <pre>npx http-server</pre>
+            <p>Then open <code>http://localhost:8000</code> in your browser</p>
+        </div>
+        
+        <!-- Deployment Section -->
+        <div class="section">
+            <h2>🌐 Deploy Your Portfolio</h2>
+            
+            <div class="feature-list">
+                <div class="feature-item">
+                    <strong>GitHub Pages</strong>
+                    <p style="margin-top: 0.5rem;">Free hosting directly from GitHub. Push to main branch and enable Pages in settings.</p>
+                </div>
+                <div class="feature-item">
+                    <strong>Netlify</strong>
+                    <p style="margin-top: 0.5rem;">Drag and drop to deploy or connect GitHub for continuous deployment.</p>
+                </div>
+                <div class="feature-item">
+                    <strong>Vercel</strong>
+                    <p style="margin-top: 0.5rem;">One-click deployment with instant preview URLs.</p>
+                </div>
+                <div class="feature-item">
+                    <strong>AWS S3</strong>
+                    <p style="margin-top: 0.5rem;">Reliable hosting with CloudFront CDN for global distribution.</p>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Tips Section -->
+        <div class="section">
+            <h2>💡 Pro Tips</h2>
+            <ul style="margin-left: 1.5rem; color: #555;">
+                <li><strong>Add Project Screenshots:</strong> Replace emojis in projects with real images</li>
+                <li><strong>Update Timeline:</strong> Keep your experience section current</li>
+                <li><strong>Use Keywords:</strong> Include relevant tech terms for SEO</li>
+                <li><strong>Test on Mobile:</strong> Use DevTools (F12) → Toggle Device Toolbar</li>
+                <li><strong>Add Analytics:</strong> Include Google Analytics for tracking</li>
+                <li><strong>Custom Domain:</strong> Point a custom domain to your hosting provider</li>
+            </ul>
+        </div>
+        
+        <!-- File Structure -->
+        <div class="section">
+            <h2>📁 File Structure</h2>
+            <pre>portfolio/
+├── index.html              ← Your main page
+├── css/
+│   ├── reset.css          ← Base styles
+│   ├── variables.css      ← Colors & spacing (edit here!)
+│   └── styles.css         ← Main design
+├── js/
+│   ├── main.js            ← Core features
+│   └── projects.js        ← Project loading
+├── data/
+│   ├── projects.json      ← Your projects (edit here!)
+│   └── discovered-projects.json  ← Auto-discovered
+├── assets/
+│   ├── images/
+│   └── fonts/
+├── discover-projects.py   ← Project scanner
+└── README.md              ← Full documentation</pre>
+        </div>
+        
+        <!-- Support Section -->
+        <div class="section">
+            <h2>🆘 Need Help?</h2>
+            <p>
+                Check out the full <code>README.md</code> file for comprehensive documentation,
+                troubleshooting, and advanced customization options.
+            </p>
+        </div>
+        
+        <!-- CTA Section -->
+        <div class="cta">
+            <a href="index.html" class="btn btn-primary">← Go to Portfolio</a>
+            <a href="README.md" target="_blank" class="btn btn-secondary">📖 Full Documentation</a>
+        </div>
+    </div>
+</body>
+</html>

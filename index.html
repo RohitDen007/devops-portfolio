@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Rohit Shrivastava - Full Stack Developer | Building modern web experiences">
+    <meta name="keywords" content="portfolio, developer, web, javascript, react, frontend">
+    <meta name="author" content="Rohit Shrivastava">
+    
+    <title>Rohit Shrivastava - Full Stack Developer</title>
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>RS</text></svg>">
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Poppins:wght@600;700;800&display=swap" rel="stylesheet">
+    
+    <!-- Stylesheets -->
+    <link rel="stylesheet" href="css/reset.css">
+    <link rel="stylesheet" href="css/variables.css">
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+    <!-- Navigation Bar -->
+    <nav class="navbar" role="navigation" aria-label="Main navigation">
+        <div class="navbar-container">
+            <div class="navbar-logo">
+                <a href="#home" class="logo-link">RS</a>
+            </div>
+            
+            <button class="theme-toggle" id="themeToggle" aria-label="Toggle dark mode" title="Toggle theme">
+                <span class="sun-icon">☀️</span>
+                <span class="moon-icon">🌙</span>
+            </button>
+            
+            <ul class="nav-menu">
+                <li><a href="#about" class="nav-link">About</a></li>
+                <li><a href="#projects" class="nav-link">Projects</a></li>
+                <li><a href="#experience" class="nav-link">Experience</a></li>
+                <li><a href="#contact" class="nav-link">Contact</a></li>
+            </ul>
+            
+            <button class="hamburger" id="hamburger" aria-label="Toggle mobile menu" aria-expanded="false">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <main>
+        <!-- Hero Section -->
+        <section id="home" class="hero" role="banner">
+            <div class="hero-content">
+                <div class="hero-text">
+                    <h1 class="hero-title" data-aos="fade-up">Rohit Shrivastava</h1>
+                    <p class="hero-subtitle" data-aos="fade-up" data-aos-delay="100">DevOps Engineer & Cloud Infrastructure Specialist</p>
+                    <p class="hero-description" data-aos="fade-up" data-aos-delay="200">
+                        I architect scalable cloud infrastructure, automate deployments, and optimize system performance. 
+                        Passionate about containerization, CI/CD pipelines, and building resilient systems.
+                    </p>
+                    <div class="hero-cta" data-aos="fade-up" data-aos-delay="300">
+                        <a href="#projects" class="btn btn-primary">View My Work</a>
+                        <a href="#contact" class="btn btn-secondary">Get In Touch</a>
+                    </div>
+                </div>
+                <div class="hero-visual" data-aos="fade-left" data-aos-delay="200">
+                    <div class="floating-card">
+                        <div class="code-block">
+                            <span class="token-keyword">const</span> <span class="token-variable">developer</span> = <span class="token-string">"RS"</span>;
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="scroll-indicator">
+                <span>Scroll to explore</span>
+            </div>
+        </section>
+
+        <!-- About Section -->
+        <section id="about" class="about" role="region" aria-labelledby="about-title">
+            <div class="container">
+                <h2 id="about-title" class="section-title" data-aos="fade-up">About Me</h2>
+                
+                <div class="about-grid">
+                    <div class="about-content" data-aos="fade-right">
+                        <p class="about-text">
+                            I'm a DevOps Engineer specializing in cloud infrastructure, containerization, and automation. 
+                            With hands-on expertise in AWS, Docker, Kubernetes, and CI/CD pipelines,
+                            I build scalable, resilient systems that power modern applications.
+                        </p>
+                        <p class="about-text">
+                            I'm passionate about Infrastructure as Code, optimizing system performance, and implementing best practices for deployment automation. 
+                            Always exploring new cloud technologies and improving operational efficiency.
+                        </p>
+                    </div>
+                    
+                    <div class="skills-container" data-aos="fade-left">
+                        <div class="skills-group">
+                            <h3 class="skills-title">Cloud & Infrastructure</h3>
+                            <div class="skills-tags">
+                                <span class="skill-tag">AWS (EC2, S3, IAM)</span>
+                                <span class="skill-tag">Docker</span>
+                                <span class="skill-tag">Kubernetes</span>
+                                <span class="skill-tag">Nginx</span>
+                                <span class="skill-tag">Load Balancing</span>
+                                <span class="skill-tag">High Availability</span>
+                            </div>
+                        </div>
+                        
+                        <div class="skills-group">
+                            <h3 class="skills-title">CI/CD & Automation</h3>
+                            <div class="skills-tags">
+                                <span class="skill-tag">Jenkins</span>
+                                <span class="skill-tag">GitHub Actions</span>
+                                <span class="skill-tag">Bash Scripting</span>
+                                <span class="skill-tag">Infrastructure as Code</span>
+                                <span class="skill-tag">Automated Testing</span>
+                                <span class="skill-tag">Pipeline Orchestration</span>
+                            </div>
+                        </div>
+                        
+                        <div class="skills-group">
+                            <h3 class="skills-title">Languages & Tools</h3>
+                            <div class="skills-tags">
+                                <span class="skill-tag">Linux/Bash</span>
+                                <span class="skill-tag">Python</span>
+                                <span class="skill-tag">Git</span>
+                                <span class="skill-tag">Node.js</span>
+                                <span class="skill-tag">MySQL</span>
+                                <span class="skill-tag">Monitoring Tools</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Projects Section -->
+        <section id="projects" class="projects" role="region" aria-labelledby="projects-title">
+            <div class="container">
+                <h2 id="projects-title" class="section-title" data-aos="fade-up">Featured Projects</h2>
+                
+                <div class="filter-tags" data-aos="fade-up" data-aos-delay="100">
+                    <button class="filter-btn active" data-filter="all">All Projects</button>
+                    <button class="filter-btn" data-filter="frontend">DevOps & Infrastructure</button>
+                    <button class="filter-btn" data-filter="fullstack">Featured</button>
+                </div>
+                
+                <div id="projectsGrid" class="projects-grid">
+                    <!-- Projects loaded dynamically -->
+                    <div class="loading-placeholder">
+                        <p>Loading projects...</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Experience Section -->
+        <section id="experience" class="experience" role="region" aria-labelledby="experience-title">
+            <div class="container">
+                <h2 id="experience-title" class="section-title" data-aos="fade-up">Experience & Education</h2>
+                
+                <div class="timeline">
+                    <div class="timeline-item" data-aos="fade-up">
+                        <div class="timeline-marker"></div>
+                        <div class="timeline-content">
+                            <h3 class="timeline-title">Senior Full Stack Developer</h3>
+                            <p class="timeline-company">Tech Company Inc. | 2023 - Present</p>
+                            <p class="timeline-description">
+                                Leading development of scalable web applications, mentoring junior developers, 
+                                and implementing modern architecture patterns.
+                            </p>
+                        </div>
+                    </div>
+                    
+                    <div class="timeline-item" data-aos="fade-up" data-aos-delay="100">
+                        <div class="timeline-marker"></div>
+                        <div class="timeline-content">
+                            <h3 class="timeline-title">Full Stack Developer</h3>
+                            <p class="timeline-company">Digital Solutions Ltd. | 2021 - 2023</p>
+                            <p class="timeline-description">
+                                Developed and maintained multiple client projects, improved performance metrics,
+                                and collaborated with cross-functional teams.
+                            </p>
+                        </div>
+                    </div>
+                    
+                    <div class="timeline-item" data-aos="fade-up" data-aos-delay="200">
+                        <div class="timeline-marker"></div>
+                        <div class="timeline-content">
+                            <h3 class="timeline-title">B.Tech in Computer Science</h3>
+                            <p class="timeline-company">University Name | 2017 - 2021</p>
+                            <p class="timeline-description">
+                                Specialized in web development and software engineering. 
+                                Graduated with honors and completed multiple internships.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact Section -->
+        <section id="contact" class="contact" role="region" aria-labelledby="contact-title">
+            <div class="container">
+                <h2 id="contact-title" class="section-title" data-aos="fade-up">Let's Connect</h2>
+                <p class="contact-subtitle" data-aos="fade-up" data-aos-delay="100">
+                    I'm always open to interesting projects and opportunities. Feel free to reach out!
+                </p>
+                
+                <div class="contact-content">
+                    <div class="contact-form-wrapper" data-aos="fade-right">
+                        <form id="contactForm" class="contact-form">
+                            <div class="form-group">
+                                <label for="name">Name</label>
+                                <input type="text" id="name" name="name" required aria-required="true">
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="email">Email</label>
+                                <input type="email" id="email" name="email" required aria-required="true">
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="message">Message</label>
+                                <textarea id="message" name="message" rows="5" required aria-required="true"></textarea>
+                            </div>
+                            
+                            <button type="submit" class="btn btn-primary">Send Message</button>
+                        </form>
+                    </div>
+                    
+                    <div class="contact-info" data-aos="fade-left">
+                        <div class="contact-item">
+                            <h3>Email</h3>
+                            <a href="mailto:rohit@example.com" class="contact-link">rohit@example.com</a>
+                        </div>
+                        
+                        <div class="contact-item">
+                            <h3>Phone</h3>
+                            <a href="tel:+91-XXXXXXXXXX" class="contact-link">+91 XXXXXXXXXX</a>
+                        </div>
+                        
+                        <div class="contact-item">
+                            <h3>Social Links</h3>
+                            <div class="social-links">
+                                <a href="https://github.com" target="_blank" rel="noopener noreferrer" class="social-link" aria-label="GitHub">
+                                    <svg viewBox="0 0 24 24" width="24" height="24" stroke="currentColor" fill="none" stroke-width="2">
+                                        <path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path>
+                                    </svg>
+                                </a>
+                                <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" class="social-link" aria-label="LinkedIn">
+                                    <svg viewBox="0 0 24 24" width="24" height="24" stroke="currentColor" fill="none" stroke-width="2">
+                                        <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path>
+                                        <rect x="2" y="9" width="4" height="12"></rect>
+                                        <circle cx="4" cy="4" r="2"></circle>
+                                    </svg>
+                                </a>
+                                <a href="https://twitter.com" target="_blank" rel="noopener noreferrer" class="social-link" aria-label="Twitter">
+                                    <svg viewBox="0 0 24 24" width="24" height="24" stroke="currentColor" fill="currentColor" stroke-width="2">
+                                        <path d="M23 3a10.9 10.9 0 01-3.14 1.53 4.48 4.48 0 00-7.86 3v1A10.66 10.66 0 013 4s-4 9 5 13a11.64 11.64 0 01-7 2s9 5 20 5a9.5 9.5 0 00-9-5.5c4.75 2.25 7-7 7-7"></path>
+                                    </svg>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer" role="contentinfo">
+        <div class="container">
+            <p class="footer-text">&copy; 2026 Rohit Shrivastava. All rights reserved.</p>
+            <p class="footer-text">Designed & Built with <span class="heart">❤</span> by Rohit</p>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="js/main.js"></script>
+    <script src="js/projects.js"></script>
+</body>
+</html>

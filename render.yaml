@@ -1,0 +1,13 @@
+# Render Deployment Configuration
+# This file is used by Render to build and deploy your portfolio
+
+services:
+  - type: web
+    name: devops-portfolio
+    runtime: docker
+    plan: free
+    dockerfilePath: ./Dockerfile
+    healthCheckPath: /
+    envVars:
+      - key: PORT
+        value: 10000
