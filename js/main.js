@@ -3,6 +3,229 @@
    ============================================ */
 
 // ============================================
+// Custom Cursor
+// ============================================
+
+const cursor = document.querySelector('.cursor-follower');
+const cursorDot = document.querySelector('.cursor-dot');
+
+let mouseX = 0;
+let mouseY = 0;
+let cursorX = 0;
+let cursorY = 0;
+let dotX = 0;
+let dotY = 0;
+
+document.addEventListener('mousemove', (e) => {
+    mouseX = e.clientX;
+    mouseY = e.clientY;
+});
+
+function animateCursor() {
+    // Smooth cursor following
+    cursorX += (mouseX - cursorX) * 0.1;
+    cursorY += (mouseY - cursorY) * 0.1;
+    
+    dotX += (mouseX - dotX) * 0.8;
+    dotY += (mouseY - dotY) * 0.8;
+    
+    if (cursor) {
+        cursor.style.left = cursorX + 'px';
+        cursor.style.top = cursorY + 'px';
+    }
+    
+    if (cursorDot) {
+        cursorDot.style.left = dotX + 'px';
+        cursorDot.style.top = dotY + 'px';
+    }
+    
+    requestAnimationFrame(animateCursor);
+}
+
+if (window.innerWidth > 768) {
+    animateCursor();
+}
+
+// Cursor hover effects
+document.querySelectorAll('a, button, .interactive').forEach(el => {
+    el.addEventListener('mouseenter', () => {
+        if (cursor) cursor.style.transform = 'scale(1.5)';
+        if (cursorDot) cursorDot.style.transform = 'scale(2)';
+    });
+    
+    el.addEventListener('mouseleave', () => {
+        if (cursor) cursor.style.transform = 'scale(1)';
+        if (cursorDot) cursorDot.style.transform = 'scale(1)';
+    });
+});
+
+// ============================================
+// Counter Animation
+// ============================================
+
+function animateCounters() {
+    const counters = document.querySelectorAll('.stat-number');
+    
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                const counter = entry.target;
+                const target = parseInt(counter.dataset.count);
+                const duration = 2000;
+                const step = target / (duration / 16);
+                let current = 0;
+                
+                const timer = setInterval(() => {
+                    current += step;
+                    if (current >= target) {
+                        counter.textContent = target + '+';
+                        clearInterval(timer);
+                    } else {
+                        counter.textContent = Math.floor(current) + '+';
+                    }
+                }, 16);
+                
+                observer.unobserve(counter);
+            }
+        });
+    });
+    
+    counters.forEach(counter => observer.observe(counter));
+}
+
+// ============================================
+// Magnetic Button Effect
+// ============================================
+
+function initMagneticButtons() {
+    const magneticElements = document.querySelectorAll('.magnetic-btn');
+    
+    magneticElements.forEach(element => {
+        element.addEventListener('mousemove', (e) => {
+            const rect = element.getBoundingClientRect();
+            const x = e.clientX - rect.left - rect.width / 2;
+            const y = e.clientY - rect.top - rect.height / 2;
+            
+            element.style.transform = `translate(${x * 0.3}px, ${y * 0.3}px)`;
+        });
+        
+        element.addEventListener('mouseleave', () => {
+            element.style.transform = 'translate(0, 0)';
+        });
+    });
+}
+
+// ============================================
+// Parallax Effect
+// ============================================
+
+function initParallax() {
+    let ticking = false;
+    
+    function updateParallax() {
+        const scrolled = window.pageYOffset;
+        const parallaxElements = document.querySelectorAll('.floating-card');
+        
+        parallaxElements.forEach((element, index) => {
+            const speed = 0.5 + (index * 0.1);
+            const yPos = -(scrolled * speed);
+            element.style.transform += ` translateY(${yPos}px)`;
+        });
+        
+        ticking = false;
+    }
+    
+    window.addEventListener('scroll', () => {
+        if (!ticking) {
+            requestAnimationFrame(updateParallax);
+            ticking = true;
+        }
+    });
+}
+
+// ============================================
+// Ripple Effect
+// ============================================
+
+function createRipple(event) {
+    const button = event.currentTarget;
+    const ripple = document.createElement('span');
+    const rect = button.getBoundingClientRect();
+    const size = Math.max(rect.width, rect.height);
+    const x = event.clientX - rect.left - size / 2;
+    const y = event.clientY - rect.top - size / 2;
+    
+    ripple.style.width = ripple.style.height = size + 'px';
+    ripple.style.left = x + 'px';
+    ripple.style.top = y + 'px';
+    ripple.classList.add('ripple-effect');
+    
+    button.appendChild(ripple);
+    
+    setTimeout(() => {
+        ripple.remove();
+    }, 600);
+}
+
+// Add ripple effect to buttons
+document.querySelectorAll('.btn, .filter-btn').forEach(button => {
+    button.addEventListener('click', createRipple);
+});
+
+// ============================================
+// Smooth Reveal Animation
+// ============================================
+
+function initSmoothReveal() {
+    const revealElements = document.querySelectorAll('.project-card, .skills-group, .timeline-item');
+    
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach((entry, index) => {
+            if (entry.isIntersecting) {
+                setTimeout(() => {
+                    entry.target.style.opacity = '1';
+                    entry.target.style.transform = 'translateY(0)';
+                }, index * 100);
+                observer.unobserve(entry.target);
+            }
+        });
+    }, {
+        threshold: 0.1,
+        rootMargin: '0px 0px -50px 0px'
+    });
+    
+    revealElements.forEach(el => {
+        el.style.opacity = '0';
+        el.style.transform = 'translateY(30px)';
+        el.style.transition = 'all 0.6s cubic-bezier(0.23, 1, 0.320, 1)';
+        observer.observe(el);
+    });
+}
+
+// ============================================
+// Typing Effect
+// ============================================
+
+function initTypingEffect() {
+    const typingElement = document.querySelector('.typing-text');
+    if (!typingElement) return;
+    
+    const text = typingElement.textContent;
+    typingElement.textContent = '';
+    
+    let i = 0;
+    function typeWriter() {
+        if (i < text.length) {
+            typingElement.textContent += text.charAt(i);
+            i++;
+            setTimeout(typeWriter, 50);
+        }
+    }
+    
+    setTimeout(typeWriter, 1000);
+}
+
+// ============================================
 // Dark Mode Toggle
 // ============================================
 
@@ -202,7 +425,7 @@ function initProjectFilter() {
 }
 
 // ============================================
-// Navbar Background on Scroll
+// Enhanced Scroll Effects
 // ============================================
 
 function updateNavbarStyle() {
@@ -210,10 +433,44 @@ function updateNavbarStyle() {
     
     window.addEventListener('scroll', () => {
         if (window.scrollY > 50) {
-            navbar.style.boxShadow = 'var(--shadow-md)';
+            navbar.style.background = 'rgba(255, 255, 255, 0.95)';
+            navbar.style.backdropFilter = 'blur(20px)';
+            navbar.style.boxShadow = '0 8px 32px rgba(0, 0, 0, 0.1)';
         } else {
+            navbar.style.background = 'rgba(255, 255, 255, 0.8)';
+            navbar.style.backdropFilter = 'blur(10px)';
             navbar.style.boxShadow = 'none';
         }
+    });
+}
+
+// ============================================
+// Page Transition Effects
+// ============================================
+
+function initPageTransitions() {
+    // Add smooth page load animation
+    document.body.style.opacity = '0';
+    window.addEventListener('load', () => {
+        document.body.style.transition = 'opacity 0.5s ease';
+        document.body.style.opacity = '1';
+    });
+    
+    // Smooth scroll for navigation links
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function (e) {
+            const href = this.getAttribute('href');
+            if (href !== '#') {
+                e.preventDefault();
+                const target = document.querySelector(href);
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            }
+        });
     });
 }
 
@@ -226,9 +483,34 @@ document.addEventListener('DOMContentLoaded', () => {
     updateActiveNavLink();
     initProjectFilter();
     updateNavbarStyle();
+    animateCounters();
+    initMagneticButtons();
+    initParallax();
+    initSmoothReveal();
+    initTypingEffect();
     
-    // Add some micro-interactions
-    addMicroInteractions();
+    // Add CSS for ripple effect
+    const style = document.createElement('style');
+    style.textContent = `
+        .ripple-effect {
+            position: absolute;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.6);
+            transform: scale(0);
+            animation: ripple-animation 0.6s linear;
+            pointer-events: none;
+        }
+        
+        @keyframes ripple-animation {
+            to {
+                transform: scale(4);
+                opacity: 0;
+            }
+        }
+    `;
+    document.head.appendChild(style);
+    
+    console.log('🚀 Enhanced Portfolio loaded with modern animations!');
 });
 
 // ============================================
