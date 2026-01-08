@@ -182,7 +182,93 @@ function filterAndRenderProjects(category) {
         ? projectsData 
         : projectsData.filter(p => p.category === category);
     
-    renderProjects(filtered);
+    // Add fade out animation
+    const projectsGrid = document.getElementById('projectsGrid');
+    if (projectsGrid) {
+        projectsGrid.style.opacity = '0';
+        projectsGrid.style.transform = 'translateY(10px)';
+        
+        setTimeout(() => {
+            renderProjects(filtered);
+            projectsGrid.style.opacity = '1';
+            projectsGrid.style.transform = 'translateY(0)';
+        }, 200);
+    }
+}
+
+// ============================================
+// Parallax Scroll Effect
+// ============================================
+
+function initParallaxEffect() {
+    const parallaxElements = document.querySelectorAll('[data-parallax]');
+    
+    window.addEventListener('scroll', () => {
+        parallaxElements.forEach(element => {
+            const scrollPosition = window.pageYOffset;
+            const elementOffset = element.offsetTop;
+            const distance = scrollPosition - elementOffset;
+            const speed = element.dataset.parallax || 0.5;
+            
+            element.style.transform = `translateY(${distance * speed}px)`;
+        });
+    });
+}
+
+// ============================================
+// Mouse Follow Effect for Cards
+// ============================================
+
+function initMouseFollowEffect() {
+    const cards = document.querySelectorAll('.project-card');
+    
+    cards.forEach(card => {
+        card.addEventListener('mousemove', (e) => {
+            const rect = card.getBoundingClientRect();
+            const x = e.clientX - rect.left;
+            const y = e.clientY - rect.top;
+            
+            const centerX = rect.width / 2;
+            const centerY = rect.height / 2;
+            
+            const rotateX = (y - centerY) / 10;
+            const rotateY = (centerX - x) / 10;
+            
+            // Subtle 3D tilt effect
+            card.style.setProperty('--mouse-x', `${x}px`);
+            card.style.setProperty('--mouse-y', `${y}px`);
+        });
+        
+        card.addEventListener('mouseleave', () => {
+            card.style.setProperty('--mouse-x', '0px');
+            card.style.setProperty('--mouse-y', '0px');
+        });
+    });
+}
+
+// ============================================
+// Ripple Click Effect
+// ============================================
+
+function initRippleEffect() {
+    const buttons = document.querySelectorAll('.filter-btn, .project-link, .btn');
+    
+    buttons.forEach(button => {
+        button.addEventListener('click', function(e) {
+            const rect = this.getBoundingClientRect();
+            const x = e.clientX - rect.left;
+            const y = e.clientY - rect.top;
+            
+            const ripple = document.createElement('span');
+            ripple.style.left = x + 'px';
+            ripple.style.top = y + 'px';
+            ripple.classList.add('ripple-effect');
+            
+            this.appendChild(ripple);
+            
+            setTimeout(() => ripple.remove(), 600);
+        });
+    });
 }
 
 // Export for use in other scripts
@@ -191,5 +277,8 @@ window.projectsModule = {
     filterAndRenderProjects,
     loadProjectsFromJSON,
     autoDiscoverProjects,
-    projectsData
+    projectsData,
+    initParallaxEffect,
+    initMouseFollowEffect,
+    initRippleEffect
 };

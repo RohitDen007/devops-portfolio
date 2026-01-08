@@ -247,37 +247,118 @@ function addMicroInteractions() {
             ripple.style.pointerEvents = 'none';
             
             const rect = this.getBoundingClientRect();
-            const size = Math.max(rect.width, rect.height);
-            const x = e.clientX - rect.left - size / 2;
-            const y = e.clientY - rect.top - size / 2;
+// ============================================
+// Project Filter Buttons
+// ============================================
+
+function initProjectFilters() {
+    const filterBtns = document.querySelectorAll('.filter-btn');
+    
+    filterBtns.forEach(btn => {
+        btn.addEventListener('click', () => {
+            // Update active state
+            filterBtns.forEach(b => b.classList.remove('active'));
+            btn.classList.add('active');
             
-            ripple.style.width = ripple.style.height = size + 'px';
-            ripple.style.left = x + 'px';
-            ripple.style.top = y + 'px';
-            ripple.style.animation = 'ripple 0.6s ease-out';
+            // Get filter category
+            const category = btn.getAttribute('data-filter');
             
-            this.style.position = 'relative';
-            this.style.overflow = 'hidden';
-            this.appendChild(ripple);
-            
-            setTimeout(() => ripple.remove(), 600);
+            // Filter and render projects
+            if (window.projectsModule && window.projectsModule.filterAndRenderProjects) {
+                window.projectsModule.filterAndRenderProjects(category);
+            }
         });
     });
+}
+
+// ============================================
+// Parallax Scroll Effect
+// ============================================
+
+function initParallaxScroll() {
+    let ticking = false;
     
-    // Add ripple animation to stylesheet if not already there
-    if (!document.querySelector('style[data-ripple]')) {
-        const style = document.createElement('style');
-        style.setAttribute('data-ripple', '');
-        style.textContent = `
-            @keyframes ripple {
-                to {
-                    transform: scale(4);
-                    opacity: 0;
-                }
+    window.addEventListener('scroll', () => {
+        if (!ticking) {
+            window.requestAnimationFrame(() => {
+                const scrollY = window.scrollY;
+                
+                // Parallax effect on sections with background
+                document.querySelectorAll('[data-parallax-speed]').forEach(element => {
+                    const speed = element.dataset.parallaxSpeed || 0.5;
+                    element.style.transform = `translateY(${scrollY * speed}px)`;
+                });
+                
+                ticking = false;
+            });
+            ticking = true;
+        }
+    });
+}
+
+// ============================================
+// Smooth Scroll Indicator
+// ============================================
+
+function updateScrollIndicator() {
+    const scrollIndicator = document.querySelector('.scroll-indicator');
+    if (scrollIndicator) {
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 100) {
+                scrollIndicator.style.opacity = '0';
+                scrollIndicator.style.pointerEvents = 'none';
+            } else {
+                scrollIndicator.style.opacity = '1';
+                scrollIndicator.style.pointerEvents = 'auto';
             }
-        `;
-        document.head.appendChild(style);
+        });
     }
+}
+
+// ============================================
+// Card Glow Effect
+// ============================================
+
+function initCardGlowEffect() {
+    const cards = document.querySelectorAll('.project-card, .timeline-item');
+    
+    cards.forEach(card => {
+        card.addEventListener('mousemove', (e) => {
+            const rect = card.getBoundingClientRect();
+            const x = e.clientX - rect.left;
+            const y = e.clientY - rect.top;
+            
+            card.style.setProperty('--mouse-x', `${x}px`);
+            card.style.setProperty('--mouse-y', `${y}px`);
+        });
+        
+        card.addEventListener('mouseleave', () => {
+            card.style.setProperty('--mouse-x', 'center');
+            card.style.setProperty('--mouse-y', 'center');
+        });
+    });
+}
+
+// ============================================
+// Magnetic Button Effect
+// ============================================
+
+function initMagneticButtons() {
+    const buttons = document.querySelectorAll('.btn, .filter-btn, .project-link');
+    
+    buttons.forEach(button => {
+        button.addEventListener('mousemove', (e) => {
+            const rect = button.getBoundingClientRect();
+            const x = e.clientX - rect.left - rect.width / 2;
+            const y = e.clientY - rect.top - rect.height / 2;
+            
+            button.style.transform = `translate(${x * 0.2}px, ${y * 0.2}px)`;
+        });
+        
+        button.addEventListener('mouseleave', () => {
+            button.style.transform = 'translate(0, 0)';
+        });
+    });
 }
 
 // ============================================
@@ -297,5 +378,33 @@ function debounce(func, wait) {
     };
 }
 
+// ============================================
+// Initialize All Interactive Features
+// ============================================
+
+document.addEventListener('DOMContentLoaded', () => {
+    // Initialize all custom effects
+    initProjectFilters();
+    initParallaxScroll();
+    updateScrollIndicator();
+    initCardGlowEffect();
+    initMagneticButtons();
+    
+    // Initialize project module effects if available
+    if (window.projectsModule) {
+        if (window.projectsModule.initParallaxEffect) {
+            window.projectsModule.initParallaxEffect();
+        }
+        if (window.projectsModule.initMouseFollowEffect) {
+            window.projectsModule.initMouseFollowEffect();
+        }
+        if (window.projectsModule.initRippleEffect) {
+            window.projectsModule.initRippleEffect();
+        }
+    }
+});
+
 // Log information about the page
-console.log('Portfolio loaded successfully!');
+console.log('Portfolio loaded successfully with enhanced interactions!');
+
+
