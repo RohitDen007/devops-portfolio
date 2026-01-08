@@ -1,42 +1,101 @@
 /* ============================================
-   FINAL OVERRIDES - White Backgrounds & Coral Colors
+   FINAL OVERRIDES - White Backgrounds & Dark Text
    ============================================ */
 
-/* Force White Backgrounds */
+/* Remove blank first page - merge all content */
+.hero {
+    min-height: 100vh;
+    padding: var(--spacing-4xl) var(--spacing-lg) var(--spacing-2xl);
+}
+
+/* Force White Backgrounds with Dark Text */
 .project-card {
     background: white !important;
+    color: #333 !important;
     box-shadow: 0 8px 32px rgba(0, 0, 0, 0.12) !important;
     border: 1px solid rgba(255, 107, 107, 0.2) !important;
+}
+
+.project-card .project-title {
+    color: #333 !important;
+}
+
+.project-card .project-description {
+    color: #666 !important;
 }
 
 .skills-group {
     background: white !important;
+    color: #333 !important;
     box-shadow: 0 8px 32px rgba(0, 0, 0, 0.12) !important;
     border: 1px solid rgba(255, 193, 7, 0.2) !important;
 }
 
+.skills-group .skills-title {
+    color: #ff6b6b !important;
+}
+
 .timeline-content {
     background: white !important;
+    color: #333 !important;
     box-shadow: 0 8px 32px rgba(0, 0, 0, 0.12) !important;
     border: 1px solid rgba(78, 205, 196, 0.2) !important;
 }
 
+.timeline-content .timeline-title {
+    color: #333 !important;
+}
+
+.timeline-content .timeline-description {
+    color: #666 !important;
+}
+
 .achievements {
     background: white !important;
+    color: #333 !important;
     box-shadow: 0 8px 32px rgba(0, 0, 0, 0.12) !important;
     border: 1px solid rgba(255, 107, 107, 0.2) !important;
+}
+
+.achievements .achievements-list li {
+    color: #666 !important;
 }
 
 .projects-cta {
     background: white !important;
+    color: #333 !important;
     box-shadow: 0 8px 32px rgba(0, 0, 0, 0.12) !important;
     border: 1px solid rgba(255, 107, 107, 0.2) !important;
 }
 
+.projects-cta .cta-text {
+    color: #666 !important;
+}
+
 .floating-card {
     background: white !important;
+    color: #333 !important;
     box-shadow: 0 8px 32px rgba(0, 0, 0, 0.12) !important;
     border: 1px solid rgba(255, 107, 107, 0.2) !important;
+}
+
+/* Ensure all sections are visible and connected */
+.about, .projects, .experience, .contact {
+    background: transparent !important;
+    position: relative;
+}
+
+/* Remove section background colors to merge everything */
+.about {
+    background: transparent !important;
+}
+
+.experience {
+    background: transparent !important;
+}
+
+.contact {
+    background: transparent !important;
 }
 
 /* Force Coral Color Scheme */
@@ -62,6 +121,23 @@
     box-shadow: 0 20px 40px rgba(78, 205, 196, 0.2) !important;
 }
 
+/* Make sure content is visible */
+.hero-content, .about-grid, .projects-grid, .timeline, .contact-content {
+    opacity: 1 !important;
+    visibility: visible !important;
+}
+
+/* Fix text colors in all cards */
+.about-text {
+    color: #666 !important;
+}
+
+.about-text.highlight {
+    background: white !important;
+    color: #333 !important;
+    border-left-color: #ff6b6b !important;
+}
+
 /* Dark Mode Overrides */
 body.dark-mode .project-card,
 body.dark-mode .skills-group,
@@ -70,5 +146,20 @@ body.dark-mode .achievements,
 body.dark-mode .projects-cta,
 body.dark-mode .floating-card {
     background: rgba(30, 30, 30, 0.95) !important;
+    color: #e8eaed !important;
     box-shadow: 0 8px 32px rgba(0, 0, 0, 0.4) !important;
+}
+
+body.dark-mode .project-card .project-title,
+body.dark-mode .timeline-content .timeline-title,
+body.dark-mode .skills-group .skills-title {
+    color: #e8eaed !important;
+}
+
+body.dark-mode .project-card .project-description,
+body.dark-mode .timeline-content .timeline-description,
+body.dark-mode .achievements .achievements-list li,
+body.dark-mode .projects-cta .cta-text,
+body.dark-mode .about-text {
+    color: #b0b3b8 !important;
 }
