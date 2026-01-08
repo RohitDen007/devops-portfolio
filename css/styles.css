@@ -2207,3 +2207,301 @@ body {
         opacity: 1;
     }
 }
+/* ============================================
+   White Backgrounds & Prettier Colors
+   ============================================ */
+
+/* Override Project Cards with White Background */
+.project-card {
+    background: rgba(255, 255, 255, 0.95) !important;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.08) !important;
+    border: 1px solid rgba(255, 255, 255, 0.3) !important;
+}
+
+.project-card::before {
+    background: linear-gradient(135deg, rgba(255, 107, 107, 0.05), rgba(78, 205, 196, 0.05)) !important;
+}
+
+.project-card:hover {
+    border-color: rgba(255, 107, 107, 0.3) !important;
+    box-shadow: 
+        0 30px 60px rgba(255, 107, 107, 0.15),
+        0 0 0 1px rgba(255, 107, 107, 0.1) !important;
+}
+
+/* Override Skills Cards with White Background */
+.skills-group {
+    background: rgba(255, 255, 255, 0.95) !important;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.08) !important;
+    border: 1px solid rgba(255, 255, 255, 0.3) !important;
+    border-radius: 20px !important;
+}
+
+.skills-group::before {
+    background: linear-gradient(135deg, rgba(255, 193, 7, 0.05), rgba(255, 107, 107, 0.05)) !important;
+}
+
+.skills-group:hover {
+    border-color: rgba(255, 193, 7, 0.4) !important;
+    box-shadow: 0 20px 40px rgba(255, 193, 7, 0.15) !important;
+}
+
+/* Override Timeline with White Background */
+.timeline-content {
+    background: rgba(255, 255, 255, 0.95) !important;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.08) !important;
+    border: 1px solid rgba(255, 255, 255, 0.3) !important;
+    border-radius: 20px !important;
+}
+
+.timeline-item:hover .timeline-content {
+    box-shadow: 0 20px 40px rgba(78, 205, 196, 0.15) !important;
+    border-color: rgba(78, 205, 196, 0.4) !important;
+}
+
+/* Override Achievements with White Background */
+.achievements {
+    background: rgba(255, 255, 255, 0.95) !important;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.08) !important;
+    border: 1px solid rgba(255, 255, 255, 0.3) !important;
+    border-radius: 20px !important;
+}
+
+/* Override Projects CTA with White Background */
+.projects-cta {
+    background: rgba(255, 255, 255, 0.95) !important;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.08) !important;
+    border: 1px solid rgba(255, 255, 255, 0.3) !important;
+    border-radius: 24px !important;
+}
+
+/* Prettier Color Scheme */
+:root {
+    --accent-color: #ff6b6b !important;
+    --accent-dark: #ff5252 !important;
+    --accent-light: #ff8a80 !important;
+    --secondary-color: #4ecdc4 !important;
+    --tertiary-color: #ffc107 !important;
+}
+
+/* Enhanced Gradient Colors */
+.text-gradient {
+    background: linear-gradient(135deg, #ff6b6b, #4ecdc4) !important;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+.text-gradient-alt {
+    background: linear-gradient(135deg, #ffc107, #ff6b6b) !important;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+/* Enhanced Button Colors */
+.btn-primary {
+    background: linear-gradient(135deg, #ff6b6b, #4ecdc4) !important;
+    box-shadow: 0 4px 15px rgba(255, 107, 107, 0.3) !important;
+}
+
+.btn-primary:hover {
+    box-shadow: 0 8px 25px rgba(255, 107, 107, 0.4) !important;
+}
+
+.btn-secondary {
+    color: #ff6b6b !important;
+    border-color: #ff6b6b !important;
+}
+
+.btn-secondary:hover {
+    background: #ff6b6b !important;
+    box-shadow: 0 8px 25px rgba(255, 107, 107, 0.3) !important;
+}
+
+/* Enhanced Filter Buttons */
+.filter-btn::before {
+    background: linear-gradient(135deg, #ff6b6b, #4ecdc4) !important;
+}
+
+.filter-btn:hover,
+.filter-btn.active {
+    border-color: #ff6b6b !important;
+    box-shadow: 0 8px 25px rgba(255, 107, 107, 0.3) !important;
+}
+
+/* Enhanced Project Links */
+.project-link {
+    border-color: rgba(255, 107, 107, 0.2) !important;
+    background: rgba(255, 107, 107, 0.05) !important;
+    color: #ff6b6b !important;
+}
+
+.project-link::before {
+    background: linear-gradient(135deg, #ff6b6b, #4ecdc4) !important;
+}
+
+.project-link:hover {
+    border-color: #ff6b6b !important;
+    box-shadow: 0 8px 25px rgba(255, 107, 107, 0.3) !important;
+}
+
+/* Enhanced Tech Tags */
+.tech-tag {
+    background: rgba(255, 107, 107, 0.1) !important;
+    color: #ff6b6b !important;
+    border-color: rgba(255, 107, 107, 0.2) !important;
+}
+
+.tech-tag:hover {
+    background: #ff6b6b !important;
+}
+
+/* Enhanced Skill Tags */
+.skill-tag.glow-on-hover:hover {
+    background: linear-gradient(135deg, #ff6b6b, #4ecdc4) !important;
+    box-shadow: 0 8px 20px rgba(255, 107, 107, 0.4) !important;
+}
+
+/* Enhanced Timeline Markers */
+.timeline-marker {
+    background: linear-gradient(135deg, #ff6b6b, #4ecdc4) !important;
+}
+
+.timeline-item:hover .timeline-marker {
+    box-shadow: 0 8px 25px rgba(255, 107, 107, 0.4) !important;
+}
+
+/* Enhanced Skill Level Badges */
+.skill-level {
+    background: linear-gradient(135deg, #ff6b6b, #4ecdc4) !important;
+}
+
+/* Enhanced Timeline Badges */
+.timeline-badge {
+    background: linear-gradient(135deg, #ff6b6b, #4ecdc4) !important;
+}
+
+/* Enhanced Achievements Title */
+.achievements-title {
+    color: #ff6b6b !important;
+}
+
+/* Enhanced Project Metrics */
+.project-metrics {
+    background: rgba(255, 107, 107, 0.05) !important;
+    border-color: rgba(255, 107, 107, 0.1) !important;
+}
+
+.metric-item {
+    color: #ff6b6b !important;
+}
+
+/* Enhanced Floating Cards */
+.floating-card {
+    background: rgba(255, 255, 255, 0.95) !important;
+    border: 1px solid rgba(255, 255, 255, 0.3) !important;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.08) !important;
+}
+
+/* Enhanced Hero Badge */
+.hero-badge {
+    background: rgba(255, 107, 107, 0.1) !important;
+    border-color: rgba(255, 107, 107, 0.2) !important;
+    color: #ff6b6b !important;
+}
+
+/* Enhanced Stat Numbers */
+.stat-number {
+    color: #ff6b6b !important;
+}
+
+/* Enhanced Navbar */
+.navbar {
+    background: rgba(255, 255, 255, 0.95) !important;
+    box-shadow: 0 2px 20px rgba(0, 0, 0, 0.08) !important;
+}
+
+/* Enhanced Nav Links */
+.nav-link::after {
+    background: #ff6b6b !important;
+}
+
+.nav-link:hover {
+    color: #ff6b6b !important;
+}
+
+/* Enhanced Logo */
+.logo-link {
+    background: linear-gradient(135deg, #ff6b6b, #4ecdc4) !important;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+/* Enhanced Section Titles */
+.section-title::after {
+    background: #ff6b6b !important;
+}
+
+/* Dark Mode Overrides */
+body.dark-mode .project-card {
+    background: rgba(30, 30, 30, 0.95) !important;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3) !important;
+}
+
+body.dark-mode .project-card:hover {
+    border-color: rgba(78, 205, 196, 0.4) !important;
+    box-shadow: 0 30px 60px rgba(78, 205, 196, 0.2) !important;
+}
+
+body.dark-mode .skills-group {
+    background: rgba(30, 30, 30, 0.95) !important;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3) !important;
+}
+
+body.dark-mode .timeline-content {
+    background: rgba(30, 30, 30, 0.95) !important;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3) !important;
+}
+
+body.dark-mode .achievements {
+    background: rgba(30, 30, 30, 0.95) !important;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3) !important;
+}
+
+body.dark-mode .projects-cta {
+    background: rgba(30, 30, 30, 0.95) !important;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3) !important;
+}
+
+body.dark-mode .floating-card {
+    background: rgba(30, 30, 30, 0.95) !important;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3) !important;
+}
+
+body.dark-mode .navbar {
+    background: rgba(15, 20, 25, 0.95) !important;
+    box-shadow: 0 2px 20px rgba(0, 0, 0, 0.3) !important;
+}
+
+/* Merge Particle Background to All Sections */
+.about, .projects, .experience, .contact {
+    position: relative;
+}
+
+.about::before, .projects::before, .experience::before, .contact::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: 
+        radial-gradient(circle at 20% 80%, rgba(255, 107, 107, 0.1) 0%, transparent 50%),
+        radial-gradient(circle at 80% 20%, rgba(78, 205, 196, 0.1) 0%, transparent 50%),
+        radial-gradient(circle at 40% 40%, rgba(255, 193, 7, 0.1) 0%, transparent 50%);
+    pointer-events: none;
+    z-index: -1;
+    animation: backgroundShift 20s ease-in-out infinite;
+}
