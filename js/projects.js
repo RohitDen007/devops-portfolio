@@ -102,17 +102,28 @@ function createProjectCard(project, index) {
         .map(tech => `<span class="tech-tag">${tech}</span>`)
         .join('');
     
+    // Add metrics if available
+    const metricsHTML = project.metrics ? 
+        `<div class="project-metrics">
+            ${project.metrics.map(metric => `<div class="metric-item">📈 ${metric}</div>`).join('')}
+        </div>` : '';
+    
     card.innerHTML = `
         <div class="project-image">${project.image}</div>
         <div class="project-content">
             <div>
                 <h3 class="project-title">${project.title}</h3>
                 <p class="project-description">${project.description}</p>
+                ${metricsHTML}
                 <div class="project-tech">${techTags}</div>
             </div>
             <div class="project-links">
-                <a href="${project.github}" target="_blank" rel="noopener noreferrer" class="project-link">GitHub</a>
-                <a href="${project.live}" target="_blank" rel="noopener noreferrer" class="project-link">Live Demo</a>
+                <a href="${project.github}" target="_blank" rel="noopener noreferrer" class="project-link">
+                    <span>🔗 GitHub</span>
+                </a>
+                <a href="${project.live}" target="_blank" rel="noopener noreferrer" class="project-link">
+                    <span>🚀 Live Demo</span>
+                </a>
             </div>
         </div>
     `;
@@ -169,9 +180,59 @@ async function autoDiscoverProjects() {
 // ============================================
 
 document.addEventListener('DOMContentLoaded', () => {
-    // Try to load from discovered projects, then fallback to defaults
-    autoDiscoverProjects();
+    // Load projects immediately
+    renderProjects();
+    
+    // Initialize project interactions
+    setTimeout(() => {
+        initProjectInteractions();
+    }, 100);
 });
+
+// ============================================
+// Project Interactions
+// ============================================
+
+function initProjectInteractions() {
+    // Add hover effects to project cards
+    const projectCards = document.querySelectorAll('.project-card');
+    
+    projectCards.forEach(card => {
+        card.addEventListener('mouseenter', () => {
+            card.style.transform = 'translateY(-20px) scale(1.02)';
+        });
+        
+        card.addEventListener('mouseleave', () => {
+            card.style.transform = 'translateY(0) scale(1)';
+        });
+    });
+    
+    // Add click ripple effect to project links
+    const projectLinks = document.querySelectorAll('.project-link');
+    projectLinks.forEach(link => {
+        link.addEventListener('click', createRippleEffect);
+    });
+}
+
+function createRippleEffect(event) {
+    const button = event.currentTarget;
+    const ripple = document.createElement('span');
+    const rect = button.getBoundingClientRect();
+    const size = Math.max(rect.width, rect.height);
+    const x = event.clientX - rect.left - size / 2;
+    const y = event.clientY - rect.top - size / 2;
+    
+    ripple.style.width = ripple.style.height = size + 'px';
+    ripple.style.left = x + 'px';
+    ripple.style.top = y + 'px';
+    ripple.classList.add('ripple-effect');
+    
+    button.appendChild(ripple);
+    
+    setTimeout(() => {
+        ripple.remove();
+    }, 600);
+}
 
 // ============================================
 // Filter Handler (integrated with main.js)
